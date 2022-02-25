@@ -36,7 +36,8 @@ Route::get('/', function () {
         "menu2" => "Beranda",
         "title" => "Beranda"
     ]);
-})->middleware('auth');
+}); 
+// ->middleware('auth')
 
 Route::get('/beranda', function () {
     return view('beranda',[
@@ -44,7 +45,9 @@ Route::get('/beranda', function () {
         "menu2" => "Beranda",
         "title" => "Beranda"
     ]);
-})->middleware('auth');
+});
+
+// ->middleware('auth')
 
 
 
