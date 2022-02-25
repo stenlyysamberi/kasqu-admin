@@ -34,7 +34,7 @@ class KasPemasukan extends Model
     }
 
     static function total_dana(){
-        $uang = KasPemasukan::select('tbl_kasmasuk', DB::raw('SUM(jumlah_pemasukan) as total'))->get();
-        return $uang;
-    }
+        $price = DB::table('tbl_kasmasuk')->sum('jumlah_pemasukan');
+        return $price;
+    }   
 }

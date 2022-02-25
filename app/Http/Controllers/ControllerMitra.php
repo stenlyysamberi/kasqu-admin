@@ -63,7 +63,7 @@ class ControllerMitra extends Controller
             'mitra'  =>  ModelMitra::mitras()->get(),
             'income' =>  KasPemasukan::mitras()->get(),
             'spent'  =>  ModelPengeluaran::mitras()->get(),
-            'total_kas' => KasPemasukan::total_dana()->get()
+            'total_kas' => KasPemasukan::total_dana()
             ]
         ]);
           
