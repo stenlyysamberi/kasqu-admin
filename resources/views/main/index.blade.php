@@ -322,7 +322,8 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fe-user"></i>
-                                    <span>{{ auth()->user()->nama }}</span>
+                                    <span>dsds</span>
+                                    {{-- {{ auth()->user()->nama }} --}}
                                 </a>
     
                                 
