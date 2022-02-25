@@ -32,4 +32,9 @@ class KasPemasukan extends Model
         ->whereBetween('tbl_kasmasuk.created_at',[$from,$to])->get();
         return $data;
     }
+
+    static function total_dana(){
+        $uang = KasPemasukan::select('tbl_kasmasuk', DB::raw('SUM(jumlah_pemasukan) as total'))->get();
+        return $uang;
+    }
 }
