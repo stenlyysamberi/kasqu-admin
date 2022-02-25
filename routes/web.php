@@ -75,11 +75,16 @@ Route::get('/report_masuk',[App\Http\Controllers\ControllerPemasukan::class,'rep
 Route::get('/report_keluar',[App\Http\Controllers\ControllerPengeluaran::class,'report_keluar'])->middleware('auth');
 
 
-Route::post('/add_userman',[ControllerUserman::class,'store'])->middleware('auth');
-Route::post('/del_userman',[ControllerUserman::class,'hapus'])->middleware('auth');
-Route::post('/edit_userman',[ControllerUserman::class,'edit'])->middleware('auth');
-Route::get('/user',[ControllerUserman::class,'index'])->middleware('auth');
-Route::post('/logout',[ControllerUserman::class,'keluar'])->middleware('auth');
+Route::post('/add_userman',[ControllerUserman::class,'store']);
+// ->middleware('auth')
+Route::post('/del_userman',[ControllerUserman::class,'hapus']);
+// ->middleware('auth')
+Route::post('/edit_userman',[ControllerUserman::class,'edit']);
+// ->middleware('auth')
+Route::get('/user',[ControllerUserman::class,'index']);
+// ->middleware('auth')
+Route::post('/logout',[ControllerUserman::class,'keluar']);
+// ->middleware('auth')
 
 
 // Route::post('/add_userman',[ControllerUserman::class,'store']);
