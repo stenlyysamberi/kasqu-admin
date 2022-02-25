@@ -7,10 +7,9 @@
         "laravel"
     ],
 
-    "post-install-cmd": [
-        "php artisan clear-compiled",
-        "chmod -R 777 public/"
-    ],
+    "post-install-cmd": [ "ln -sr storage/app/public public/storage" ],
+
+    
 
     "license": "MIT",
     "require": {
