@@ -49,8 +49,6 @@ class ControllerUserman extends Controller{
 
     public function edit(Request $request){
 
-      
-
         $request->validate([
             'user_id' => 'required',
             'nama' => 'required',
@@ -127,5 +125,20 @@ class ControllerUserman extends Controller{
         return response()->json(
                 $user
         );
+    }
+
+    public function edit_user(Request $req){
+        $req->validate([
+            'nama'    => 'required',
+            'alamat'  => 'required',
+            'phone'   => 'required'
+        ]);
+
+    
+    User::find($req->user_id)->update($req->all());
+      return response()->json([
+        'result'   => 'berhasil'
+      ]);
+    
     }
 }
