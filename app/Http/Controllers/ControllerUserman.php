@@ -137,7 +137,8 @@ class ControllerUserman extends Controller{
     
     User::find($req->user_id)->update($req->all());
       return response()->json([
-        'result'   => 'berhasil'
+        'result'   => 'berhasil',
+        'message'  => '0'
       ]);
     
     }
