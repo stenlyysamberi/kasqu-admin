@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/beranda',[ControllerMitra::class,'beranda']);//menampilkan data di beranda
+Route::post('/beranda',[ControllerMitra::class,'beranda']);//menampilkan data di beranda
 
 Route::post('/login',[ControllerUserman::class,'login_api']); //Login menggunakan phone dan password
 Route::post('/fect_user',[ControllerUserman::class,'fect_user']); //akan menampilkan data user berdasarkan ID

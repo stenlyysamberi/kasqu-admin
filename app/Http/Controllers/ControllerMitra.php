@@ -57,12 +57,13 @@ class ControllerMitra extends Controller
 
 
     // request API
-    public function beranda(){
+    public function beranda(Request $req){
         return response()->json ([
             [
             'mitra'  =>  ModelMitra::mitras()->get(),
             'income' =>  KasPemasukan::mitras()->get(),
-            'spent'  =>  ModelPengeluaran::mitras()->get()
+            'spent'  =>  ModelPengeluaran::mitras()->get(),
+            'mutasi_user' => KasPemasukan::mutasi_user($req->user_id)
            
             ]
         ]);

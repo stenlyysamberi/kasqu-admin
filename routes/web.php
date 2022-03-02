@@ -36,7 +36,7 @@ Route::get('/', function () {
         "menu2" => "Beranda",
         "title" => "Beranda"
     ]);
-})->middleware('auth'); 
+}); 
 // ->middleware('auth')
 
 Route::get('/beranda', function () {
@@ -45,7 +45,7 @@ Route::get('/beranda', function () {
         "menu2" => "Beranda",
         "title" => "Beranda"
     ]);
-})->middleware('auth');
+});
 
 
 
@@ -75,13 +75,13 @@ Route::get('/report_masuk',[App\Http\Controllers\ControllerPemasukan::class,'rep
 Route::get('/report_keluar',[App\Http\Controllers\ControllerPengeluaran::class,'report_keluar'])->middleware('auth');
 
 
-Route::post('/add_userman',[ControllerUserman::class,'store'])->middleware('auth');
+Route::post('/add_userman',[ControllerUserman::class,'store']);
 // ->middleware('auth')
 Route::post('/del_userman',[ControllerUserman::class,'hapus'])->middleware('auth');
 // ->middleware('auth')
 Route::post('/edit_userman',[ControllerUserman::class,'edit'])->middleware('auth');
 
-Route::get('/user',[ControllerUserman::class,'index'])->middleware('auth');
+Route::get('/user',[ControllerUserman::class,'index']);
 // ->middleware('auth')
 Route::post('/logout',[ControllerUserman::class,'keluar'])->middleware('auth');
 // ->middleware('auth')

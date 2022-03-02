@@ -3,6 +3,7 @@
 namespace App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Integer;
 use PhpParser\Node\Expr\Cast\String_;
 
 class KasPemasukan extends Model
@@ -33,8 +34,18 @@ class KasPemasukan extends Model
         return $data;
     }
 
-    static function total_dana(){
-        $price = DB::table('tbl_kasmasuk')->sum('jumlah_pemasukan');
-        return $price;
+    static function mutasi_user(string $user_id){
+        // $data = DB::table('tbl_kasmasuk')
+        // ->join('tbl_user','tbl_kasmasuk.user_id','=','tbl_user.user_id')
+        // ->where('tbl_kasmasuk.user_id', $user_id)
+        // ->select('tbl_user.nama')->get();
+        // return $data;
+
+        $users = DB::table('tbl_kasmasuk')
+            ->join('tbl_user','tbl_kasmasuk.user_id','=','tbl_user.user_id')
+            ->where('tbl_kasmasuk.user_id', $user_id)
+            ->select('tbl_user.nama','tbl_kasmasuk.jumlah_pemasukan','tbl_kasmasuk.created_at as tgl')
+            ->get();
+        return $users;
     }   
 }

@@ -128,17 +128,29 @@ class ControllerUserman extends Controller{
     }
 
     public function edit_user(Request $req){
-        $req->validate([
-            'nama'    => 'required',
-            'alamat'  => 'required',
-            'phone'   => 'required'
-        ]);
+       
+        try {
+            $req->validate([
+                'nama'    => 'required',
+                'alamat'  => 'required',
+                'phone'   => 'required',
+                'gambar'  => 'image'
+            ]);
 
+            User::find($req->user_id)->update($req->all());
+                return response()->json([
+                    'result'   => 'berhasil',
+                    'message'  => '0'
+                ]);
+            
+
+            } catch (\Throwable $th) {
+                response()->json([
+                    'message' => "error" + $th
+                ]);
+        }
     
-    User::find($req->user_id)->update($req->all());
-       return response()->json([
-        'result'   => 'berhasil',
-        'message'  => '0'
-       ]);
     }
 }
+
+
