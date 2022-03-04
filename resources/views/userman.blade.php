@@ -94,6 +94,7 @@
                                 <form action="/del_userman" method="post">
                                     @csrf
                                     {{-- @method('delete') --}}
+                                    <input hidden name="oldimage" type="text" value="{{ $item->gambar }}">
                                     <input hidden type="text" name="id" value="{{ $item->user_id }}">
                                     <button onclick="return confirm('apakah Anda akan menghapus data ini?')" class="btn btn-danger btn-sm"><i class="fas fa-trash" aria-hidden="true"></i></button>
                                 </form>
@@ -189,13 +190,15 @@
                     
                                     <div class="row">
                                         <div class="col-md-12">
+
+                                            <img src="{{ asset('storage/' . $item->gambar) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block" alt="" srcset="">
                     
-                                             <h4 class="header-title">Image Profil</h4>
+                                            {{-- <h4 class="header-title">Image Profil</h4>
                                             <p class="sub-header">
                                                Set your Profil Image.
-                                            </p>
-                    
-                                            <input type="file"  name="image" class="form-control" width="100" />
+                                            </p> --}}
+                                            <input name="imageOld" hidden type="" value="{{ $item->gambar }}">
+                                            <input type="file"  name="gambar" class="form-control" width="100" />
                                             
                                         </div>
                     

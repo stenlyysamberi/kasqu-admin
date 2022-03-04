@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ControllerUserman extends Controller{
 
@@ -29,7 +30,7 @@ class ControllerUserman extends Controller{
                 'nip' => 'required',
                 'jenis_kelamin' => 'required',
                 'password' => 'required',
-                'gambar' => 'required|file|max:2024',
+                'gambar' => 'image|file|max:2024',
                 'level' => 'required'
             ]);
 
@@ -37,8 +38,6 @@ class ControllerUserman extends Controller{
             if($request->file('gambar')){
                 $simpan['gambar'] = $request->file('gambar')->store('image-file');
             }
-
-        
 
         $simpan['password'] = Hash::make($simpan['password']);
         User::create($simpan);
@@ -49,22 +48,27 @@ class ControllerUserman extends Controller{
 
     public function edit(Request $request){
 
-        $request->validate([
+        $rule = [
             'user_id' => 'required',
             'nama' => 'required',
             'phone' => 'required',
             'alamat' => 'required',
             'nip' => 'required',
-            'gambar' => 'image|file|max:1024',
+            'gambar' => 'required|file|max:2024',
             'jenis_kelamin' => 'required',
             'level' => 'required'
-        ]);
+        ];
+
+        $validate = $request->validate($rule);
 
         if($request->file('gambar')){
-            $simpan['gambar'] = $request->file('gambar')->store('image-file');
+            if($request->imageOld){
+                Storage::delete($request->imageOld);
+            }
+            $validate['gambar'] = $request->file('gambar')->store('image-file');
         }
 
-      User::find($request->user_id)->update($request->all());
+      User::where('user_id',$request->user_id)->update($validate);
       $request->session()->flash("user", "update has been created!");
       return redirect('/user');
     }
@@ -92,6 +96,7 @@ class ControllerUserman extends Controller{
     }
 
     public function hapus(Request $request){
+        Storage::delete($request->oldimage);
         User::find($request->id)->delete();
         return redirect('/user')->with('user','userman has been deleted!');
     }
