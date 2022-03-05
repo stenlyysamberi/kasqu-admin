@@ -13,6 +13,26 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class ControllerPemasukan extends Controller{
+
+    //BLOK API
+    public function bayar(Request $req){
+        $simpan = $req->validate([
+            'user_id'  => 'required',
+            'mitra_id' => 'required',
+            'jumlah_pemasukan' => 'required',
+            'tanggal_masuk' => 'required'
+        ]);
+
+       AppKasPemasukan::create($simpan);
+        return response()->json([
+            'result'   => 'berhasil',
+            'message'  => '0'
+        ]);
+    }
+    //END 
+
+
+
     public function index(){
         return view('pemasukan',[
             "menu1" => "Beranda",
@@ -76,4 +96,6 @@ class ControllerPemasukan extends Controller{
         ]);
         
       }
+
+      
 }

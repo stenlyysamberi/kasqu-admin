@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ControllerMitra;
+use App\Http\Controllers\ControllerPemasukan;
 use App\Http\Controllers\ControllerUserman;
+use App\KasPemasukan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -25,3 +27,4 @@ Route::post('/login',[ControllerUserman::class,'login_api']); //Login menggunaka
 Route::post('/fect_user',[ControllerUserman::class,'fect_user']); //akan menampilkan data user berdasarkan ID
 Route::post('/edit_user',[ControllerUserman::class,'edit_user']); //akan menampilkan data user berdasarkan ID
 
+Route::post('/bayar',[ControllerPemasukan::class,'bayar']); //Bayar Uang Tagihan 
