@@ -26,7 +26,7 @@ class ControllerPemasukan extends Controller{
        AppKasPemasukan::create($simpan);
         return response()->json([
             'result'   => 'berhasil',
-            'message'  => '0'
+            'message'  => '1'
         ]);
     }
     //END 
