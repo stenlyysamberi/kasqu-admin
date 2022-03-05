@@ -21,6 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/get_user_mitra',[ControllerMitra::class,'get_mitra_user']);//menampilkan data di beranda
+
 Route::post('/beranda',[ControllerMitra::class,'beranda']);//menampilkan data di beranda
 
 Route::post('/login',[ControllerUserman::class,'login_api']); //Login menggunakan phone dan password

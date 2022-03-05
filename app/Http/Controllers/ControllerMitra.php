@@ -70,4 +70,11 @@ class ControllerMitra extends Controller
           
         
     }
+
+    public function get_mitra_user(Request $req){
+        $mitra = ModelMitra::where('user_id', $req->user_id)
+                            ->select('mitra_id','nama_usaha')
+                            ->get();
+        return $mitra;              
+    }
 }
