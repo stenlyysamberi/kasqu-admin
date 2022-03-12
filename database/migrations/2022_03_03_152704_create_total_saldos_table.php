@@ -15,11 +15,10 @@ class CreateTotalSaldosTable extends Migration
     {
         Schema::create('total_saldos', function (Blueprint $table) {
             $table->bigIncrements('id_saldo');
-            $table->unsignedBigInteger("kasmasuk_id");
-            $table->string("saldo");
+            $table->string('saldo');
             $table->timestamps();
 
-            $table->foreign('kasmasuk_id')->references('kasmasuk_id')->on('tbl_kasmasuk')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('kasmasuk_id')->references('kasmasuk_id')->on('tbl_kasmasuk')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

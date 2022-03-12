@@ -43,8 +43,9 @@ class KasPemasukan extends Model
 
         $users = DB::table('tbl_kasmasuk')
             ->join('tbl_user','tbl_kasmasuk.user_id','=','tbl_user.user_id')
+            ->join('tbl_mitra_kampus','tbl_kasmasuk.mitra_id','=','tbl_mitra_kampus.mitra_id')
             ->where('tbl_kasmasuk.user_id', $user_id)
-            ->select('tbl_user.nama','tbl_kasmasuk.jumlah_pemasukan','tbl_kasmasuk.created_at as tgl')
+            ->select('tbl_mitra_kampus.nama_usaha','tbl_user.nama','tbl_kasmasuk.jumlah_pemasukan','tbl_kasmasuk.created_at as tgl')
             ->get();
         return $users;
     }   

@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\KasPemasukan as AppKasPemasukan;
 use App\ModelHistory;
 use App\ModelMitra;
+use App\TotalSaldo;
 use App\User;
 use App\UserMan;
 use Illuminate\Http\Request;
@@ -28,6 +29,9 @@ class ControllerPemasukan extends Controller{
             'result'   => 'berhasil',
             'message'  => '1'
         ]);
+
+       
+    
     }
     //END 
 

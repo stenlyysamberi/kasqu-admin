@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\KasPemasukan;
 use App\ModelMitra;
 use App\ModelPengeluaran;
+use App\TotalSaldo;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -60,6 +61,7 @@ class ControllerMitra extends Controller
     public function beranda(Request $req){
         return response()->json ([
             [
+            'sisa_saldo'  =>  TotalSaldo::saldo()->get(),
             'mitra'  =>  ModelMitra::mitras()->get(),
             'income' =>  KasPemasukan::mitras()->get(),
             'spent'  =>  ModelPengeluaran::mitras()->get(),

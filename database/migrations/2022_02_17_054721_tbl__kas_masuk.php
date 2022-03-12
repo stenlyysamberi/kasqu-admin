@@ -15,7 +15,7 @@ class TblKasMasuk extends Migration
     {
         Schema::create('tbl_kasmasuk', function (Blueprint $table) {
             $table->bigIncrements('kasmasuk_id')->unsigned();
-            $table->integer('mitra_id');
+            $table->integer('mitra_id')->unsigned()->nullable();
             $table->text('tanggal_masuk',30)->nullable();
             $table->string('jumlah_pemasukan',12);
             $table->integer('user_id');
