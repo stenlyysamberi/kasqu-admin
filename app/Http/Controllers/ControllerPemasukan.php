@@ -18,10 +18,10 @@ class ControllerPemasukan extends Controller{
     //BLOK API
     public function bayar(Request $req){
         $simpan = $req->validate([
-            'user_id'  => 'required',
             'mitra_id' => 'required',
+            'tanggal_masuk' => 'required',
             'jumlah_pemasukan' => 'required',
-            'tanggal_masuk' => 'required'
+            'user_id'  => 'required'          
         ]);
 
        AppKasPemasukan::create($simpan);
@@ -51,10 +51,10 @@ class ControllerPemasukan extends Controller{
     public function store(Request $req){
         
         $simpan = $req->validate([
-            'user_id' => 'required',
             'mitra_id' => 'required',
+            'tanggal_masuk' => 'required',
             'jumlah_pemasukan' => 'required',
-            'tanggal_masuk' => 'required'
+            'user_id' => 'required'
         ]);
 
        AppKasPemasukan::create($simpan);

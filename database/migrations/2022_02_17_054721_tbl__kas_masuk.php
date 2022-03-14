@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class TblKasMasuk extends Migration
 {
@@ -22,6 +23,15 @@ class TblKasMasuk extends Migration
             $table->date('updated_at');
             $table->date('created_at');
         });
+
+
+        DB::unprepared('
+            CREATE TRIGGER tr_add_saldo AFTER INSERT ON tbl_kasmasuk FOR EACH ROW
+            BEGIN
+                UPDATE total_saldos SET saldo = saldo + NEW.jumlah_pemasukan 
+                WHERE id_saldo = 1;
+            END
+        ');
     }
 
     /**

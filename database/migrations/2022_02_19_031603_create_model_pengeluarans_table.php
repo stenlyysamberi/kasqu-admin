@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateModelPengeluaransTable extends Migration
 {
@@ -19,10 +20,16 @@ class CreateModelPengeluaransTable extends Migration
             $table->string('jumlah_keluar');
             $table->string('catatan');
             $table->timestamps();
-
-            // $table->foreign('user_id')->references('user_id')->on('tbl_user')->onDelete('CASCADE')->onUpdate('CASCADE');
-            
         });
+
+
+        DB::unprepared('
+            CREATE TRIGGER tr_del_saldo AFTER INSERT ON tbl_kaskeluar FOR EACH ROW
+            BEGIN
+                UPDATE total_saldos SET saldo = saldo - NEW.jumlah_keluar 
+                WHERE id_saldo = 1;
+            END
+        ');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\ModelPengeluaran;
+use App\TotalSaldo;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
@@ -24,9 +25,17 @@ class ControllerPengeluaran extends Controller{
             'user_id' => 'required'
         ]);
 
-        ModelPengeluaran::create($simpan);
-        $ree->session()->flash('masuk', ',has been a created');
-        return redirect('/keluar');
+        $user = TotalSaldo::first();
+        if($ree->jumlah_keluar >= $user->saldo){
+            $ree->session()->flash('masuk', ',Saldo Tidak Cukup!');
+            return redirect('/keluar');
+        }else{
+            ModelPengeluaran::create($simpan);
+            $ree->session()->flash('masuk', ',has been a created');
+            return redirect('/keluar');
+        }
+
+        
    }
 
    public function hapus(Request $req){

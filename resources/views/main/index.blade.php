@@ -463,20 +463,20 @@
                             <li>
                                 <a href="#sidebarEcommerce" data-toggle="collapse">
                                     <i data-feather="plus"></i>
-                                    <span> Contents </span>
+                                    <span> Menu Utama </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="sidebarEcommerce">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="/user">User Man</a>
+                                            <a href="/user">Data Pengguna</a>
                                         </li>
                                         <li>
-                                            <a href="/masuk">Kas Masuk</a>
+                                            <a href="/masuk">Dana Masuk</a>
                                         </li>
 
                                         <li>
-                                            <a href="/keluar">Kas Keluar</a>
+                                            <a href="/keluar">Dana Keluar</a>
                                         </li>
 
                                         <li>
@@ -485,19 +485,6 @@
 
                                         
 
-                                        {{-- <li>
-                                            <a href="/hewan_p">Jenis Hewan</a>
-                                        </li>
-                                        <li>
-                                            <a href="/basis_a">Basis Aturan</a>
-                                        </li>
-                                        <li>
-                                            <a href="/Gejala_p">Penyakit & Pengobatan</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/list_gejala">Gejala</a>
-                                        </li> --}}
                                        
                                     </ul>
                                 </div>
@@ -511,7 +498,7 @@
                             <li>
                                 <a href="#sidebarMaps" data-toggle="collapse">
                                     <i data-feather="file-text"></i>
-                                    <span> Report </span>
+                                    <span> Laporan </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="sidebarMaps">

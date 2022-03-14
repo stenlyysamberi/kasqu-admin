@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateTotalSaldosTable extends Migration
 {
@@ -16,10 +17,15 @@ class CreateTotalSaldosTable extends Migration
         Schema::create('total_saldos', function (Blueprint $table) {
             $table->bigIncrements('id_saldo');
             $table->string('saldo');
-            $table->timestamps();
-
-            // $table->foreign('kasmasuk_id')->references('kasmasuk_id')->on('tbl_kasmasuk')->onDelete('cascade')->onUpdate('cascade');
+           
         });
+
+        DB::table('total_saldos')->insert([
+            'saldo' => 0
+	       
+        ]);
+
+        
     }
 
     /**

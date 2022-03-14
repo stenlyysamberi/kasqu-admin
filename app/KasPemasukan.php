@@ -11,7 +11,7 @@ class KasPemasukan extends Model
     protected $guarded = [];
     protected $table = 'tbl_kasmasuk';
     protected $primaryKey = 'kasmasuk_id';
-    // public $timestamps = false;
+    //public $timestamps = false;
 
 
     /**

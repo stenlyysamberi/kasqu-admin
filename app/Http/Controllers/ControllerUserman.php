@@ -69,7 +69,7 @@ class ControllerUserman extends Controller{
         }
 
       User::where('user_id',$request->user_id)->update($validate);
-      $request->session()->flash("user", "update has been created!");
+      $request->session()->flash("user","update has been created!");
       return redirect('/user');
     }
 
@@ -80,7 +80,7 @@ class ControllerUserman extends Controller{
             'password'   => 'required'
         ]);
 
-        if(Auth::attempt($credentials)){
+        if(Auth::attempt(['phone' => $request->phone, 'password' => $request->password,'level'=>'stafadmin'])){
             $request->session()->regenerate();
             return redirect()->intended('/beranda');
         }
@@ -109,7 +109,7 @@ class ControllerUserman extends Controller{
             'password' =>'required'
        ]);
 
-       if(Auth::attempt($cre)){
+       if(Auth::attempt(['phone' => $request->phone, 'password' => $request->password,'level'=>'owner'])){
             // $request->session()->regenerate();
             return response()->json([
                 'result'   => 'berhasil',
@@ -132,29 +132,29 @@ class ControllerUserman extends Controller{
         );
     }
 
-    public function edit_user(Request $req){
+    public function edit_user(Request $request){
        
-        try {
-            $req->validate([
+            $req = [
                 'nama'    => 'required',
                 'alamat'  => 'required',
-                'phone'   => 'required',
-                'gambar'  => 'image'
-            ]);
+                'phone'   => 'required'
+                // 'gambar'  => 'required|file|max:2024'
+            ];
 
-            User::find($req->user_id)->update($req->all());
+            $validate = $request->validate($req);
+
+            // if($request->file('gambar')!=null){
+            //     if($request->imageOld){
+            //         Storage::delete($request->imageOld);
+            //     }
+            //     $validate['gambar'] = $request->file('gambar')->store('image-file');
+            // }
+
+            User::where('user_id',$request->user_id)->update($validate);
                 return response()->json([
                     'result'   => 'berhasil',
                     'message'  => '0'
                 ]);
-            
-
-            } catch (\Throwable $th) {
-                response()->json([
-                    'message' => "error" + $th
-                ]);
-        }
-    
     }
 }
 

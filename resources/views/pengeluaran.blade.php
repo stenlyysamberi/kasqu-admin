@@ -185,10 +185,6 @@
                 </div>
                 <div class="modal-body p-4">
 
-
-                  
-
-                    
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
