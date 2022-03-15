@@ -210,7 +210,7 @@
                             </div>
                         </li>
             
-                        <li class="dropdown notification-list topbar-dropdown">
+                        {{-- <li class="dropdown notification-list topbar-dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fe-bell noti-icon"></i>
                                 <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
@@ -300,10 +300,10 @@
     
                             </div>
                         </li>
-    
+     --}}
                         <li class="dropdown notification-list topbar-dropdown">
                             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                {{-- <img src=" {{ asset('storage/' . auth()->user()->gambar) }}" alt="user-image" class="rounded-circle"> --}}
+                                <img src=" {{ asset('storage/' . auth()->user()->gambar) }}" alt="user-image" class="rounded-circle">
                                
                                 <span class="pro-user-name ml-1">
                                    
@@ -322,7 +322,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fe-user"></i>
-                                    {{-- <span>{{ auth()->user()->nama }}</span> --}}
+                                    <span>{{ auth()->user()->nama }}</span>
                                     
                                 </a>
     

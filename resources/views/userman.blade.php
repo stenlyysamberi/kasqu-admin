@@ -126,6 +126,13 @@
                                                 <input type="text" value="{{ $item->nama }}" name="nama"  class="form-control" id="field-3" placeholder="Nama Lengkap">
                                             </div>
                                         </div>
+
+                                        {{-- <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="field-3" class="control-label">Password</label>
+                                                <input type="password" value="{{Hash::check($item->password)}}" name="nama"  class="form-control" id="field-3" placeholder="Nama Lengkap">
+                                            </div>
+                                        </div> --}}
                                     </div>
                     
                                     <div class="row">
