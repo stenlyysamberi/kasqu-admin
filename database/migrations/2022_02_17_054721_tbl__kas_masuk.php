@@ -25,13 +25,13 @@ class TblKasMasuk extends Migration
         });
 
 
-        DB::unprepared('
-            CREATE TRIGGER tr_add_saldo AFTER INSERT ON tbl_kasmasuk FOR EACH ROW
-            BEGIN
-                UPDATE total_saldos SET saldo = saldo + NEW.jumlah_pemasukan 
-                WHERE id_saldo = 1;
-            END
-        ');
+        // DB::unprepared('
+        //     CREATE TRIGGER tr_add_saldo AFTER INSERT ON tbl_kasmasuk FOR EACH ROW
+        //     BEGIN
+        //         UPDATE total_saldos SET saldo = saldo + NEW.jumlah_pemasukan 
+        //         WHERE id_saldo = 1;
+        //     END
+        // ');
     }
 
     /**

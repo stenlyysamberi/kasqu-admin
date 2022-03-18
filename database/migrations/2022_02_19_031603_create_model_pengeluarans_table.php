@@ -23,13 +23,13 @@ class CreateModelPengeluaransTable extends Migration
         });
 
 
-        DB::unprepared('
-            CREATE TRIGGER tr_del_saldo AFTER INSERT ON tbl_kaskeluar FOR EACH ROW
-            BEGIN
-                UPDATE total_saldos SET saldo = saldo - NEW.jumlah_keluar 
-                WHERE id_saldo = 1;
-            END
-        ');
+        // DB::unprepared('
+        //     CREATE TRIGGER tr_del_saldo AFTER INSERT ON tbl_kaskeluar FOR EACH ROW
+        //     BEGIN
+        //         UPDATE total_saldos SET saldo = saldo - NEW.jumlah_keluar 
+        //         WHERE id_saldo = 1;
+        //     END
+        // ');
     }
 
     /**
