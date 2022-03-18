@@ -101,7 +101,7 @@ class WaterController extends Controller
             return response()->json("Data ID tidak terdaftar!");
        }else{
             Water::where('id_water', $id)->delete();
-            return response()->json("Data ID Berhasil Hapus!");
+            return response()->json("Data ID Berhasil Hapus");
        }
     }
 }
