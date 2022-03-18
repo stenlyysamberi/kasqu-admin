@@ -77,9 +77,14 @@ class WaterController extends Controller
      */
     public function update(Request $request,$id)
     {
-        //return(dd($request));
-        Water::where('id_water',2)->update($request->all());
-        return response()->json("date has been updated");
+        $cek = Water::find($id);
+        if ($cek == null) {
+            return response()->json("Data ID Tidak Terdaftar");
+        }else{
+            Water::where('id_water',2)->update($request->all());
+            return response()->json("date has been updated");
+        }
+       
     }
 
     /**
@@ -90,7 +95,13 @@ class WaterController extends Controller
      */
     public function destroy($id)
     {
-        Water::where('id_water', $id)->delete();
-       return response()->json("Data has been deleted!");
+    
+       $cek = Water::find($id);
+       if ($cek == null) {
+            return response()->json("Data ID tidak terdaftar!");
+       }else{
+            Water::where('id_water', $id)->delete();
+            return response()->json("Data ID Berhasil Hapus!");
+       }
     }
 }
