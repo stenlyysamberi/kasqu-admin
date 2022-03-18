@@ -29,4 +29,12 @@ Route::post('/login',[ControllerUserman::class,'login_api']); //Login menggunaka
 Route::post('/fect_user',[ControllerUserman::class,'fect_user']); //akan menampilkan data user berdasarkan ID
 Route::post('/edit_user',[ControllerUserman::class,'edit_user']); //akan menampilkan data user berdasarkan ID
 
-Route::post('/bayar',[ControllerPemasukan::class,'bayar']); //Bayar Uang Tagihan 
+Route::post('/bayar',[ControllerPemasukan::class,'bayar']); //Bayar Uang Tagihan
+
+
+
+#API FOR JONAS iOT
+$router->get('status','WaterController@index');
+$router->delete('status/{id}',['uses' => 'WaterController@destroy']);
+$router->put('status/{id}',['uses' => 'WaterController@update']);
+$router->post('status','WaterController@create');
