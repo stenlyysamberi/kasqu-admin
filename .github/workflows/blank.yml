@@ -16,6 +16,7 @@ jobs:
         switches: -avzr --delete --exclude=".git" --exclude=".github"
         path: /
         remote_path: /home/sakodeko/donasi
-        remote_host: donasi.sacode.web.id
+        remote_host: sacode.web.id
         remote_user: sakodeko
+        remote_port: 5555
         remote_key: ${{ secrets.DEPLOY_KEY }}
