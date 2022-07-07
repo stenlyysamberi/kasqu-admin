@@ -18,4 +18,4 @@ jobs:
         remote_path: /home/sakodeko/public_html/donasi
         remote_host: donasi.sacode.web.id
         remote_user: sakodeko
-        remote_key:  ${{secrets.DEPLOY_KEY}}
+        remote_key: ${{ secrets.DEPLOY_KEY }}
