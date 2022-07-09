@@ -18,5 +18,4 @@ jobs:
         password: ${{ secrets.FTP_PASS }}
         protocol: ftp
         port: ${{ secrets.FTP_PORT }}
-        port: 21
         exclude: .git*
