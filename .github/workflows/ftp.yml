@@ -13,9 +13,10 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ftp.sacode.web.id
-        username: github@donasi.sacode.web.id
-        password: Sacode@2022
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASS }}
         protocol: ftp
+        port: ${{ secrets.FTP_PORT }}
         port: 21
         exclude: .git*
