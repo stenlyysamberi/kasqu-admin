@@ -1,0 +1,21 @@
+on:
+  push:
+    branches: [ ftp ]
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Auto Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2.3.2
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ftp.sacode.web.id
+        username: github@donasi.sacode.web.id
+        password: Sacode@2022
+        protocol: ftp
+        port: 21
+        exclude: .git*
