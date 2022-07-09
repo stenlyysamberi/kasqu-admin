@@ -16,6 +16,5 @@ jobs:
         server: ftp.sacode.web.id
         username: github@donasi.sacode.web.id
         password: Sacode@2022
-        protocol: ftp
+        protocol: ftps
         port: 21
-        exclude: .git*
