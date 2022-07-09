@@ -13,9 +13,9 @@ class ModelMitra extends Model
     // public $timestamps = false;
 
   
-    static function mitras(){
-        $mitra = DB::table('tbl_mitra_kampus')
-        ->join('tbl_user','tbl_mitra_kampus.user_id','=','tbl_user.user_id');
-        return $mitra;
-    }
+    // static function mitras(){
+    //     $mitra = DB::table('tbl_mitra_kampus')
+    //     ->join('tbl_user','tbl_mitra_kampus.user_id','=','tbl_user.user_id');
+    //     return $mitra;
+    // }
 }

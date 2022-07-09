@@ -13,6 +13,8 @@
 
         <link href="../assets/libs/summernote/summernote-bs4.min.css" rel="stylesheet" type="text/css" />
 
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+
         <!-- plugin css -->
         <link href="../assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
 
@@ -453,7 +455,7 @@
 
                             
                             <li>
-                                <a href="/beranda">
+                                <a href="/">
                                     <i data-feather="home"></i>
                                     <span> Beranda </span>
                                 </a>
@@ -515,7 +517,12 @@
                             </li>
 
                            
-                          
+                            <li>
+                                <a href="/app">
+                                    <i data-feather="download"></i>
+                                    <span>Apps </span>
+                                </a>
+                            </li>
                               
                             
                         </ul>
@@ -590,6 +597,8 @@
 
         <!-- Dashboard 2 init -->
         <script src="../assets/js/pages/dashboard-2.init.js"></script>
+        <script src="../assets/js/chart.js"></script>
+        
 
       
 
@@ -599,21 +608,7 @@
         <script src="../assets/libs/summernote/stenly.js"></script>
         <script src="../assets/libs/summernote/summernote-bs4.min.js"></script>
 
-         <script>
-            jQuery(document).ready(function(){
-                $('.summernote').summernote({
-                    height: 230,                 // set editor height
-                    minHeight: null,             // set minimum height of editor
-                    maxHeight: null,             // set maximum height of editor
-                    focus: false                 // set focus to editable area after initializing summernote
-                });
-            });
-
-           
-           
-           
-           }
-        </script>
+        
         
     </body>
 </html>

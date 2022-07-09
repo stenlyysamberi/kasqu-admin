@@ -18,14 +18,15 @@ class ControllerMitra extends Controller
             "menu3" => "Sumber Pemasukan",
             "title" => "Sumber Pemasukan",
             "userman" => User::all(),
-            'mitra' => ModelMitra::mitras()->get()
+            "mitra"  => ModelMitra::all()
+            // 'mitra' => ModelMitra::mitras()->get()
         ]);
     }
 
     public function save(Request $request){
         $req = $request->validate([
-            'nama_usaha' => 'required',
-            'user_id'    => 'required'
+            'nama_usaha' => 'required'
+            // 'user_id'    => 'required'
         ]);
 
         ModelMitra::create($req);
@@ -41,7 +42,7 @@ class ControllerMitra extends Controller
 
     public function edit(Request $request){
         $request->validate([
-            'user_id' => 'required',
+            // 'user_id' => 'required',
             'nama_usaha' => 'required',
             'mitra_id' => 'required'
         ]);

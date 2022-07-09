@@ -61,10 +61,11 @@
             <thead>
                 <tr>
                   <th scope="col">No</th>
-                  <th scope="col">Nama Usaha</th>
-                  <th scope="col">Waktu Pembayaraan</th>
-                  <th scope="col">Nama Owner/Kabag</th>
-                  <th scope="col">Jumlah Pemasukan</th>
+                  <th scope="col">Jenis Donasi</th>
+                  <th scope="col">Waktu</th>
+                  <th scope="col">Kontributor</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Bukti</th>
                   <th scope="col">Catatan</th>
                   <th scope="col">Options</th>
                 </tr>
@@ -78,6 +79,11 @@
                     <td>{{ $item->created_at }}</td>
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->jumlah_pemasukan }}</td>
+                    <td class="table-user">
+                        <a href="{{ asset('storage/' . $item->bukti_img) }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('storage/' . $item->bukti_img) }}" alt="table-user" class="mr-2 rounded-circle">
+                        </a>
+                    </td>
                     <td>{{ $item->tanggal_masuk }}</td>
                
                     <td>
@@ -220,7 +226,7 @@
                    <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="field-3" class="control-label">Nama Pemilik</label>
+                                <label for="field-3" class="control-label">Nama</label>
                                 <select name="user_id" id="" class="form-control">
                                     <option value="">pilih</option>
                                     @foreach ($userman as $item)
@@ -234,7 +240,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="field-3" class="control-label">Nama Mitra</label>
+                                <label for="field-3" class="control-label">Jenis Donasi</label>
                                 <select name="mitra_id" id="" class="form-control">
                                     <option value="">pilih</option>
                                     @foreach ($sumber as $item)
@@ -278,7 +284,7 @@
                            Set your Profil Image.
                         </p>
 
-                        <input type="file" name="image" class="form-control" width="100" />
+                        <input type="file" name="bukti_img" class="form-control" width="100" />
                         
                     </div>
             </div>

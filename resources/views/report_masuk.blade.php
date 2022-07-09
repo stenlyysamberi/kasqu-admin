@@ -60,7 +60,7 @@
         <div class="row">
             <div class="col-12">
                 <h3>LAPORAN KEUANGAN DANA MASUK</h3>
-                <h4>UNIVERSITAS OTTOW GEISSLER PAPUA</h4>
+                {{-- <h4>UNIVERSITAS OTTOW GEISSLER PAPUA</h4> --}}
                 {{-- <div><p id="tanggal">Tanggal: {{  }} :  - To : </p> </div> --}}
             </div>
         </div>

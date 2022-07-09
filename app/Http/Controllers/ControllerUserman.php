@@ -48,6 +48,8 @@ class ControllerUserman extends Controller{
 
     public function edit(Request $request){
 
+       
+
         $rule = [
             'user_id' => 'required',
             'nama' => 'required',
@@ -62,8 +64,8 @@ class ControllerUserman extends Controller{
         $validate = $request->validate($rule);
 
         if($request->file('gambar')){
-            if($request->imageOld){
-                Storage::delete($request->imageOld);
+            if($request->lama){
+                Storage::delete($request->lama);
             }
             $validate['gambar'] = $request->file('gambar')->store('image-file');
         }
@@ -80,7 +82,7 @@ class ControllerUserman extends Controller{
             'password'   => 'required'
         ]);
 
-        if(Auth::attempt(['phone' => $request->phone, 'password' => $request->password,'level'=>'stafadmin'])){
+        if(Auth::attempt(['phone' => $request->phone, 'password' => $request->password,'level'=>'admin'])){
             $request->session()->regenerate();
             return redirect()->intended('/beranda');
         }

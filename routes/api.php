@@ -31,10 +31,12 @@ Route::post('/edit_user',[ControllerUserman::class,'edit_user']); //akan menampi
 
 Route::post('/bayar',[ControllerPemasukan::class,'bayar']); //Bayar Uang Tagihan
 
+Route::get('/income',[ControllerPemasukan::class,'income']);
+
 
 
 #API FOR JONAS iOT
-$router->get('status','WaterController@index');
-$router->delete('status/{id}',['uses' => 'WaterController@destroy']);
-$router->put('status/{id}',['uses' => 'WaterController@update']);
-$router->post('status','WaterController@create');
+// $router->get('status','WaterController@index');
+// $router->delete('status/{id}',['uses' => 'WaterController@destroy']);
+// $router->put('status/{id}',['uses' => 'WaterController@update']);
+// $router->post('status','WaterController@create');

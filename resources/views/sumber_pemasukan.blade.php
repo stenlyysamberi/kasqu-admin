@@ -51,10 +51,10 @@
                                     </div>
                                 </th>
                                 
-                                <th>Pemilik/Owner</th>
-                                <th>Phone</th>
-                                <th>Alamat</th>
-                                <th>Nama Usaha </th>
+                                <th>Nama</th>
+                                <th>Created</th>
+                                <th>Updated</th>
+                                {{-- <th>Nama Usaha </th> --}}
                                 
                                 <th style="width: 75px;">Action</th>
                             </tr>
@@ -63,23 +63,23 @@
                                 @foreach ($mitra as $item)
                                 <tr>
                                     <th scope="row"> {{ $loop->iteration }}</th>
-                                    <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->alamat }}</td>
                                     <td>{{ $item->nama_usaha }}</td>
+                                    <td>{{ $item->updated_at }}</td>
+                                    <td>{{ $item->created_at }}</td>
+                                   
                                    
                                    
                                     
                                     <td>
                                         <div class="row">
                                             <div class="btn-group">
-                                                <a data-toggle="modal" data-target="#edit_userman{{ $item->user_id }}" href="#" class="btn btn-secondary btn-sm"> <i class="fas fa-edit"></i></a>
+                                                <a data-toggle="modal" data-target="#edit_userman{{ $item->mitra_id }}" href="#" class="btn btn-secondary btn-sm"> <i class="fas fa-edit"></i></a>
                                                 {{-- <button data-toggle="model" data-target="#edit_userman" class="btn btn-secondary btn-sm"><i class="fas fa-edit " aria-hidden="true"></i></button> --}}
                                                
                                                 <form action="/del_mitra" method="post">
                                                     @csrf
                                                     {{-- @method('delete') --}}
-                                                    <input hidden type="text" name="id" value="{{ $item->user_id }}">
+                                                    <input hidden type="text" name="id" value="{{ $item->mitra_id }}">
                                                     <button onclick="return confirm('apakah Anda akan menghapus data ini?')" class="btn btn-danger btn-sm"><i class="fas fa-trash" aria-hidden="true"></i></button>
                                                 </form>
                                             </div>
@@ -91,17 +91,17 @@
                 
                                     <form enctype="multipart/form-data" method="POST" action="/edit_mitra">
                                         @csrf
-                                        <div id="edit_userman{{ $item->user_id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                        <div id="edit_userman{{ $item->mitra_id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                     
-                                                        <h4 class="modal-title">Edit Mitra</h4>
+                                                        <h4 class="modal-title">Edit Donasi</h4>
                                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                                     </div>
                                                     <div class="modal-body p-4">
                                                         <input hidden type="text"name="mitra_id" value="{{ $item->mitra_id }}">
-                                                       <input hidden type="text" name="user_id" value="{{ $item->user_id }}">
+                                                        {{-- <input hidden type="text" name="user_id" value="{{ $item->user_id }}"> --}}
                                     
                                                        <div class="row">
                                                         <div class="col-md-12">
@@ -113,7 +113,7 @@
                                                     </div>
                                     
                                              
-                                                    <div class="row">
+                                                    {{-- <div class="row">
                                                         <div class="col-md-12">
                                                             <label for="field-2"  class="control-label">Owner/Pemilik</label>
                                                                 <select name="user_id" required="required" class="form-control">
@@ -125,7 +125,7 @@
                                 
                                                                 </select>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                    
                                                 </div>
                                                 <div class="modal-footer">
@@ -179,13 +179,13 @@
                    <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="field-3" class="control-label">Nama Usaha</label>
+                            <label for="field-3" class="control-label">Jenis Donasi</label>
                             <input type="text" name="nama_usaha"  class="form-control" id="field-3" placeholder="Nama Lengkap">
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="field-3" class="control-label">Nama Owner</label>
@@ -197,7 +197,7 @@
                             </select>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                
 
             </div>

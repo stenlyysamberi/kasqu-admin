@@ -63,11 +63,11 @@
                   <th scope="col">No</th>
                   <th scope="col">Nama Lengkap</th>
                   <th scope="col">Profil</th>
-                  <th scope="col">NIP</th>
+                  <th scope="col">Surel</th>
                   <th scope="col">No.Hp</th>
                   <th scope="col">Alamat</th>
-                  <th scope="col">Jenis Kelamin</th>
-                  <th scope="col">Jabatan</th>
+                  <th scope="col">JK</th>
+                  <th scope="col">Level</th>
                   <th scope="col">Options</th>
                 </tr>
               </thead>
@@ -150,7 +150,7 @@
                                                 <select name="jenis_kelamin" required="required" class="form-control">
                                                     <option value="">Pilih</option>
                                                     <option value="Pria">Pria</option>
-                                                    <option value="Wanita">Wanitar</option>
+                                                    <option value="Wanita">Wanita</option>
                 
                                                 </select>
                                         </div>
@@ -174,10 +174,10 @@
                                                 <select name="level" required="required" class="form-control">
                                                     <option value="">Pilih</option>
                                                     
-                                                    <option value="stafadmin">Staff Admin</option>
-                                                    <option value="kabag">Kepala Bagian</option>
-                                                    <option value="dosen">Dosen</option>
-                                                    <option value="owner">Owner Mitra</option>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="users">Users</option>
+                                                    {{-- <option value="dosen">Dosen</option>
+                                                    <option value="owner">Owner Mitra</option> --}}
                                                    
                                                 </select>
                                             </div>
@@ -204,7 +204,7 @@
                                             <p class="sub-header">
                                                Set your Profil Image.
                                             </p> --}}
-                                            <input name="imageOld" hidden type="" value="{{ $item->gambar }}">
+                                            <input name="lama" hidden type="" value="{{ $item->gambar }}">
                                             <input type="file"  name="gambar" class="form-control" width="100" />
                                             
                                         </div>
@@ -270,8 +270,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="field-3" class="control-label">NIP</label>
-                            <input type="text" name="nip" required="required" class="form-control" id="field-3" placeholder="No. Pegawai">
+                            <label for="field-3" class="control-label">Surel</label>
+                            <input type="text" name="nip" required="required" class="form-control" id="field-3" placeholder="sacode@outlook.co.id">
                         </div>
                     </div>
                 </div>
@@ -312,10 +312,10 @@
                             <label for="field-2"  class="control-label">Level</label>
                             <select name="level" required="required" class="form-control">
                                 <option value="">Pilih</option>
-                                <option value="stafadmin">Staff Admin</option>
-                                <option value="kabag">Kepala Bagian</option>
-                                <option value="dosen">Dosen</option>
-                                <option value="owner">Owner Mitra</option>
+                                <option value="admin">Admin</option>
+                                <option value="users">Users</option>
+                                {{-- <option value="dosen">Dosen</option>
+                                <option value="owner">Owner Mitra</option> --}}
                                
                             </select>
                         </div>

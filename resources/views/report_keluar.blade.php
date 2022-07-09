@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-12">
                 <h3>LAPORAN KEUANGAN DANA KELUAR</h3>
-                <h4>UNIVERSITAS OTTOW GEISSLER PAPUA</h4>
+                <h4></h4>
                 {{-- <div><p id="tanggal">Tanggal: From :  - To : </p> </div> --}}
             </div>
         </div>

@@ -34,7 +34,7 @@ class KasPemasukan extends Model
         return $data;
     }
 
-    static function mutasi_user(string $user_id){
+    static function mutasi_user($user_id){
         // $data = DB::table('tbl_kasmasuk')
         // ->join('tbl_user','tbl_kasmasuk.user_id','=','tbl_user.user_id')
         // ->where('tbl_kasmasuk.user_id', $user_id)

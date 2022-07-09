@@ -23,12 +23,12 @@
             <div class="row">
                 <div class="col-6">
                     <div class="avatar-sm bg-blue rounded">
-                        <i class="fe-aperture avatar-title font-22 text-white"></i>
+                        <i class="fe-download avatar-title font-22 text-white"></i>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="text-right">
-                        <h3 class="text-dark my-1">$<span data-plugin="counterup">12,145</span></h3>
+                        <h3  class="text-dark my-1"><span data-plugin="counterup"><p id="saldo">{{ $saldo->saldo }}</p></span></h3>
                         <p class="text-muted mb-1 text-truncate">Income status</p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-6">
                     <div class="avatar-sm bg-success rounded">
-                        <i class="fe-shopping-cart avatar-title font-22 text-white"></i>
+                        <i class="fe-user avatar-title font-22 text-white"></i>
                     </div>
                 </div>
                 <div class="col-6">
@@ -121,6 +121,23 @@
             </div>
         </div> <!-- end card-box-->
     </div> <!-- end col -->
+
+
+    <div class="col-md-12 col-xl-3">
+        <div class="card-box">
+
+            <h4 class="">Graph Income</h4>
+
+            <div class="row">
+                <div class="col-12">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
 </div>
 <!-- end row -->
 @endsection 

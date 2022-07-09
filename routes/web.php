@@ -5,9 +5,12 @@ use App\Http\Controllers\ControllerPemasukan;
 use App\Http\Controllers\ControllerUserman;
 use App\KasPemasukan;
 use App\ModelMitra;
+use App\TotalSaldo;
 use Carbon\Carbon;
 use App\User;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Xml\Totals;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,21 +34,25 @@ Route::get('/login', function () {
 Route::post('/login',[ControllerUserman::class,'login'])->middleware('guest');
 
 Route::get('/', function () {
+
+    // $saldo = TotalSaldo::all()->first();
+    // return $saldo;
+
     return view('Beranda',[
         "menu1" => "Beranda",
         "menu2" => "Beranda",
-        "title" => "Beranda"
+        "title" => "Beranda",
+        "saldo" => TotalSaldo::all()->first()
     ]);
-}); 
-// ->middleware('auth')
+})->middleware('auth');
 
-Route::get('/beranda', function () {
-    return view('beranda',[
-        "menu1" => "Beranda",
-        "menu2" => "Beranda",
-        "title" => "Beranda"
-    ]);
-});
+// Route::get('/beranda', function () {
+//     return view('beranda',[
+//         "menu1" => "Beranda",
+//         "menu2" => "Beranda",
+//         "title" => "Beranda"
+//     ]);
+// });
 
 
 
