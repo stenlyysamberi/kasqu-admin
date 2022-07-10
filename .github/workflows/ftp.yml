@@ -1,8 +1,7 @@
-#deploy ftp
-on: 
-  push : 
-    branches :
-      -ftp
+on:
+  push:
+    branches: [ ftp ]
+    
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
