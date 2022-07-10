@@ -39,15 +39,6 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
-<<<<<<< HEAD
         server-dir: /home/sakodeko/public_html/donasi/
-        # server: ftp.samkirkland.com
-        # username: myFtpUserName
-        # password: ${{ secrets.ftp_password }}
-=======
-        protocol: ftp
-        port: ${{ secrets.FTP_PORT }}
-        exclude: .git*
-          - .git*/**
-          - .github
->>>>>>> 53e9a5fe7647e7530245756a0733da8818ee2875
+      
+
