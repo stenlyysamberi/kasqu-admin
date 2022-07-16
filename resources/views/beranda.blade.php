@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-6">
                     <div class="text-right">
-                        <h3  class="text-dark my-1"><span data-plugin="counterup"><p id="saldo">{{ $saldo->saldo }}</p></span></h3>
+                        <h3  class="text-dark my-1">Rp.<span data-plugin="counterup">{{number_format($saldo->saldo) }}</span></h3>
                         <p class="text-muted mb-1 text-truncate">Income status</p>
                     </div>
                 </div>

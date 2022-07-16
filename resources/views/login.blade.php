@@ -9,7 +9,7 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="shortcut icon" href="../assets/images/logo-kasqu.png">
 
 		<!-- App css -->
 		<link href="../assets/css/bootstrap-material.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
@@ -57,9 +57,9 @@
                              @endif
 
                                 <div class="text-center w-75 m-auto">
-                                    <img src="../assets/images/users/logo.png" height="88" alt="user-image" class="rounded-circle shadow">
-                                    <h4 class="text-dark-50 text-center mt-3">Hi ! Selamat Datang </h4>
-                                    <p class="text-muted mb-4">Enter your password to access the admin.</p>
+                                    <img src="../assets/images/logo-kasqu.png" height="88" alt="user-image" >
+                                    <h4 class="text-dark-50 text-center mt-3">Welcome Back! </h4>
+                                    {{-- <p class="text-muted mb-4">Enter your password to access the admin kasqu.</p> --}}
                                 </div>
 
 

@@ -38,7 +38,7 @@ Route::get('/', function () {
     // $saldo = TotalSaldo::all()->first();
     // return $saldo;
 
-    return view('Beranda',[
+    return view('beranda',[
         "menu1" => "Beranda",
         "menu2" => "Beranda",
         "title" => "Beranda",
@@ -46,13 +46,13 @@ Route::get('/', function () {
     ]);
 })->middleware('auth');
 
-// Route::get('/beranda', function () {
-//     return view('beranda',[
-//         "menu1" => "Beranda",
-//         "menu2" => "Beranda",
-//         "title" => "Beranda"
-//     ]);
-// });
+Route::get('/app', function () {
+    return view('apps',[
+        "menu1" => "Beranda",
+        "menu2" => "Beranda",
+        "title" => "Beranda"
+    ]);
+});
 
 
 

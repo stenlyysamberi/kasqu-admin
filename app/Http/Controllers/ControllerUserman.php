@@ -84,7 +84,7 @@ class ControllerUserman extends Controller{
 
         if(Auth::attempt(['phone' => $request->phone, 'password' => $request->password,'level'=>'admin'])){
             $request->session()->regenerate();
-            return redirect()->intended('/beranda');
+            return redirect()->intended('/');
         }
 
         return back()->with('masuk', 'Data yang dimasukan tidak sesuai dengan records.');

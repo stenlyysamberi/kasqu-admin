@@ -9,7 +9,7 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="shortcut icon" href="../assets/images/logo-kasqu.png">
 
         <link href="../assets/libs/summernote/summernote-bs4.min.css" rel="stylesheet" type="text/css" />
 
@@ -371,10 +371,10 @@
     
                         <a href="index.html" class="logo logo-light text-center">
                             <span class="logo-sm">
-                                <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                <img src="../assets/images/logo-kasqu.png" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="../assets/images/logo-light-2.png" alt="" height="20">
+                                <img src="../assets/images/logo-kasqu.png" alt="" height="50">
                             </span>
                         </a>
                     </div>
